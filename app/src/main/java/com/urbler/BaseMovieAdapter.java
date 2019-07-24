@@ -26,9 +26,6 @@ public abstract class BaseMovieAdapter extends SectionedRecyclerViewAdapter<Base
     OnItemClickListener onItemClickListener;
 
     static class SubheaderHolder extends RecyclerView.ViewHolder {
-
-        private static Typeface meduiumTypeface = null;
-
         TextView mSubheaderText;
         ImageView mArrow;
 
@@ -48,7 +45,7 @@ public abstract class BaseMovieAdapter extends SectionedRecyclerViewAdapter<Base
 
         MovieViewHolder(View itemView) {
             super(itemView);
-            this.textMovieTitle = (TextView) itemView.findViewById(R.id.movieTitle);
+         //   this.textMovieTitle = (TextView) itemView.findViewById(R.id.movieTitle);
             this.textMovieGenre = (TextView) itemView.findViewById(R.id.movieGenre);
             this.textMovieYear = (TextView) itemView.findViewById(R.id.movieYear);
         }

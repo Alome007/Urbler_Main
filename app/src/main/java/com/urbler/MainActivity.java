@@ -2,7 +2,9 @@ package com.urbler;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.TextPaint;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -63,16 +66,12 @@ public class MainActivity extends AppCompatActivity implements BaseMovieAdapter.
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         //     Resources resources = getResources();
-
-        Resources resources = getResources();
-        String[] names = resources.getStringArray(R.array.names);
-        String[] genres = resources.getStringArray(R.array.genres);
-        int[] years = resources.getIntArray(R.array.years);
         mMovieList = new ArrayList<>();
         setAdapterByDecade();
         collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.CollapsedAppBar);
         collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
         populateInfo(collapsingToolbarLayout,profile);
+        makeCollapsingToolbarLayoutLooksGood(collapsingToolbarLayout);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements BaseMovieAdapter.
                     yourName = weMeetPojo.getSurName()+" "+" "+ weMeetPojo.getFirstName();
                     // pro.setVisibility(View.GONE);
                 }
-                collapsingToolbarLayout.setTitle(yourName);
+                collapsingToolbarLayout.setTitle(yourName+" "+mMovieList.size());
 //
             }
 
@@ -195,16 +194,19 @@ public class MainActivity extends AppCompatActivity implements BaseMovieAdapter.
                     for(DataSnapshot ds0:ds.getChildren()){
                         appPojo value = ds0.getValue(appPojo.class);
                         String city = value.getDay();
+                        String city0=value.getCity();
                         int position=value.getPosition();
                         String type = value.getType();
                         String date= value.getPhoneNumber();
                         appPojo meetPojo = new appPojo();
                         meetPojo.setDay(city);
+                        meetPojo.setCity(city0);
                         meetPojo.setType(type);
                         meetPojo.setPhoneNumber(date);
                         meetPojo.setPosition(position);
                         mMovieList.add(meetPojo);
-                        Toast.makeText(MainActivity.this, date, Toast.LENGTH_SHORT).show();
+                        int size=mMovieList.size();
+                      //  Toast.makeText(MainActivity.this, size, Toast.LENGTH_SHORT).show();
                         recyclerView.setAdapter(mSectionedRecyclerAdapter);
                     }
                 }
@@ -216,5 +218,18 @@ public class MainActivity extends AppCompatActivity implements BaseMovieAdapter.
             }
         });
     };
+    private void makeCollapsingToolbarLayoutLooksGood(CollapsingToolbarLayout collapsingToolbarLayout) {
+        try {
+            final Field field = collapsingToolbarLayout.getClass().getDeclaredField("mCollapsingTextHelper");
+            field.setAccessible(true);
 
+            final Object object = field.get(collapsingToolbarLayout);
+            final Field tpf = object.getClass().getDeclaredField("mTextPaint");
+            tpf.setAccessible(true);
+
+            ((TextPaint) tpf.get(object)).setTypeface(Typeface.createFromAsset(getAssets(), "product.ttf"));
+            ((TextPaint) tpf.get(object)).setColor(getResources().getColor(R.color.white));
+        } catch (Exception ignored) {
+        }
+    }
 }

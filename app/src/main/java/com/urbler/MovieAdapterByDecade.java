@@ -18,7 +18,7 @@ public class MovieAdapterByDecade extends BaseMovieAdapter {
     @Override
     public void onBindItemViewHolder(final MovieViewHolder holder, final int position) {
         final appPojo movie = movieList.get(position);
-        holder.textMovieTitle.setText(movie.getDay());
+      //  holder.textMovieTitle.setText(movie.getDay());
         holder.textMovieGenre.setText(movie.getCity());
         holder.textMovieYear.setText(String.valueOf(movie.getPhoneNumber()));
         holder.itemView.setOnClickListener(v -> onItemClickListener.onItemClicked(movie));

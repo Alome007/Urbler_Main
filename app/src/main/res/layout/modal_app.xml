@@ -42,27 +42,7 @@
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
-          <RadioGroup
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_height="wrap_content">
-          <RadioButton
-              android:layout_width="wrap_content"
-              android:text="Postpaid"
-              android:fontFamily="@raw/product"
-              android:layout_height="wrap_content" />
-          <RadioButton
-              android:layout_width="wrap_content"
-              android:text="Prepaid"
-              android:fontFamily="@raw/product"
-              android:layout_marginLeft="20dp"
-              android:layout_height="wrap_content" />
-      </LinearLayout>
-          </RadioGroup>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,6 +74,32 @@
         app:maxValue="100"
         app:minValue="0" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:id="@+id/type"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:text="Postpaid"
+                android:id="@+id/postpaid"
+                android:fontFamily="@raw/product"
+                android:checked="true"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:text="Prepaid"
+                android:id="@+id/prepaid"
+                android:fontFamily="@raw/product"
+                android:layout_marginLeft="0dp"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+    </LinearLayout>
+
     <Button
         android:layout_width="300dp"
         android:layout_gravity="center"
