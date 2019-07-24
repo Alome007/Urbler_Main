@@ -122,7 +122,7 @@ public class modalNew extends BottomSheetDialogFragment {
     public void sendPush(){
     }
     public void allowTrack(int phone){
-
+int p;
     }
 }
 
