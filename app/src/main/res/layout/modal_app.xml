@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/modal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/date"
+        android:textColor="#000"
+        style="@style/FirebaseUI.Text"
+        android:textStyle="bold"
+        android:fontFamily="@raw/product"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="300dp"
+            android:fontFamily="@raw/product"
+            android:id="@+id/titleAdd"
+           android:inputType="text"
+            android:hint="City"
+            android:textColorHint="#000"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="300dp"
+            android:fontFamily="@raw/product"
+            android:id="@+id/phone"
+            android:inputType="text"
+            android:hint="Phone Number"
+            android:textColorHint="#000"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+          <RadioGroup
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:text="Postpaid"
+              android:fontFamily="@raw/product"
+              android:layout_height="wrap_content" />
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:text="Prepaid"
+              android:fontFamily="@raw/product"
+              android:layout_marginLeft="20dp"
+              android:layout_height="wrap_content" />
+      </LinearLayout>
+          </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:textColor="#000"
+        android:text="Items Quantity"
+        android:layout_marginTop="29dp"
+        android:textStyle="bold"
+        style="@style/FirebaseUI.Text"
+        android:fontFamily="@raw/product"/>
+    <com.gildaswise.horizontalcounter.HorizontalCounter
+        android:id="@+id/horizontal_counter"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        app:stepValue="1"
+        app:textColor="#009688"
+        app:textSize="10dp"
+        app:minusButtonColor="#F44336"
+        app:plusButtonColor="#2196F3"
+        app:displayAsInteger="false"
+        app:initialValue="0"
+        app:maxValue="100"
+        app:minValue="0" />
+    </LinearLayout>
+    <Button
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Submit"
+        android:textColor="#fff"
+        android:textAllCaps="false"
+        android:background="@drawable/buttons"
+        android:textSize="16dp"
+        android:fontFamily="@raw/product"
+        android:layout_height="wrap_content" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+</LinearLayout>

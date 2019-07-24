@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/modal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="20dp"
+      android:fontFamily="@raw/product"
+      android:textColor="#000"
+      android:text="Your application have been submitted and currently \n been Reviewed.\n This Stage awaits your unique code. "/>
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="-20dp"
+      android:textColor="@color/material_blue_500"
+      android:text="  Learn More" />
+  <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="wrap_content"
+      android:layout_gravity="center"
+      android:layout_height="wrap_content">
+  </com.google.android.material.textfield.TextInputLayout>
+  <ProgressBar
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:id="@+id/prog"
+      android:layout_margin="20dp" />
+  <Button
+      android:layout_width="300dp"
+      android:id="@+id/con"
+      android:layout_gravity="center"
+      android:layout_marginTop="-70dp"
+      android:text="Continue"
+      android:visibility="gone"
+      android:enabled="false"
+      android:textColor="#fff"
+      android:textAllCaps="false"
+      android:background="@drawable/buttons"
+      android:textSize="16dp"
+      android:fontFamily="@raw/product"
+      android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "508738630470",
+    "firebase_url": "https://urbler.firebaseio.com",
+    "project_id": "urbler",
+    "storage_bucket": "urbler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508738630470:android:5e19530d166c52fe",
+        "android_client_info": {
+          "package_name": "com.urbler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508738630470-iud2pp0nsvi17qqqo0ragv87qmh20mc3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.urbler",
+            "certificate_hash": "00277b2ebbaa31a8f5bab2b178eb0173789dcd88"
+          }
+        },
+        {
+          "client_id": "508738630470-ingpd842rscrt61s0aregcq3qgrgll0r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.urbler",
+            "certificate_hash": "10ef3543cba8270c4dfd9d92ad1eebdcc7956bbd"
+          }
+        },
+        {
+          "client_id": "508738630470-peuuasbeoqq97cjas597n9qgom3v2nfm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.urbler",
+            "certificate_hash": "59fb7614ad8bc2ec44b240b9ddfb9337a002e6cc"
+          }
+        },
+        {
+          "client_id": "508738630470-u7v0vs7q56j21b6gbqf0q5sff2h21uuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkBXzUOencXFdZt_tOoM7UeZ6gsvQg1_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508738630470-u7v0vs7q56j21b6gbqf0q5sff2h21uuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
